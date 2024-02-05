@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #232830;
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+
+.page_header {
+
+    background: #40396E;
+    margin: 6em;
+    margin-left: 7em;
+    margin-right: 7em;
+}
+
+
+.txt-logo {
+    padding: 0.9em;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 1.2em;
+
+}
+
+.nav {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.nav .nav-txt {
+    font-weight: 400;
+    font-size: 1.5em;
+    display: flex;
+    padding: 0.7em;
+    justify-content: space-between;
+    line-height: 36px;
+}
+
+.group5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.7em;
+}
+
+.logo {
+    width: 6em;
+}
+
+em {
+    font-family: 'Recursive', sans-serif;
+    font-weight: 700;
+    color: #FF7575;
+}
+
+/* .hori {
+    color: #232830;
+    background: #000;
+    height: 0.01em;
+    box-shadow: 0px 0 50px #000;
+} */
+
+hr {
+    display: block;
+    height: 1px;
+    border: #ccc;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.tnt {
+    height: 1em;
+    margin-top: -0.99em;
+
+
+}
+
+.tnt-txt {
+    justify-content: space-around;
+    margin-left: 2em;
+    font-size: 0.7em;
+    font-family: 'Recursive', sans-serif;
+}
+
+.dt {
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.data {
+    background: #fff;
+    width: 25%;
+    height: 20em;
+    border-radius: 25px;
+    margin: 27px;
+    display: inline-block;
+}
+
+
+.data-img {
+    margin-top: 1.2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 82%;
+    height: 9em;
+    /* margin: 1em; */
+    border-radius: 25px;
+    background-image: url(/image/image1.png);
+    background-size: cover;
+}
+
+.dt-h {
+    background: none;
+    color: #232830;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0.9em;
+}
+
+.dt-p {
+    background: none;
+    color: #232830;
+    font-size: 11px;
+    font-weight: 400;
+    padding: 0.9em;
+}
+
+.dt-d {
+    background: none;
+    color: #232830;
+    margin-top: 0.7em;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.dt-date {
+    background: #fff;
+    color: #232830;
+    font-size: 0.7em;
+}
+
+.dt-c {
+    background: #fff;
+    color: #232830;
+}
+
+.dt-f {
+    background: #fff;
+    color: #232830;
+    font-size: 0.7em;
+}
+
+.sift {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    padding-left: 2em;
+    font-family: 'Recursive', sans-serif;
+    font-weight: 400;
+}
+
+.btn a:active {
+    border: 2px;
+    border-top: #FF7575;
+    color: #FF7575;
+}
+
+.btn a:hover {
+    border: 2px;
+    border-top: #FF7575;
+    color: #FF7575;
+}
+
+footer {
+    margin-top: 0.7em;
+    margin-bottom: 5em;
+
+}
+
+.right {
+    margin-left: 5em;
+    font-weight: 500;
+}
+
+.left {
+    margin-left: 19em;
+    font-weight: 500;
+}
+
+button {
+    background: #208cf1;
+    padding: 0.41em 0.7em;
+    border: none;
+    border-radius: 6px;
+    margin-left: 12px;
+    font-family: 'Recursive', sans-serif;
+    font-weight: 700;
+}
+
+.twitter {
+    background: #208cf1;
+    color: #fff;
+    height: 9px;
+    padding: 5px;
+}
+.bx {
+    font-size: 1.1em;
+}
+
+.footer {
+    font-family: 'Recursive', sans-serif;
+    display: flex;
+    justify-content: space-around;
+}
