@@ -279,3 +279,45 @@ button {
         height: auto;
     }
 }
+@media only screen and (max-width: 800px) {
+    /* Adjust styles for smaller screens */
+    .page_header {
+        margin: 2em;
+    }
+
+    .tnt {
+        margin-top: 0;
+    }
+
+    .dt {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .data {
+        width: 50%;
+        margin: 1em;
+    }
+
+    .data-img {
+        height: 8em;
+    }
+
+    .sift {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .left {
+        margin-left: 3em;
+    }
+
+    .right {
+        margin-left: 1em;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
