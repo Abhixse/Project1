@@ -1,0 +1,13 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd client && npm run dev",
+    "server": "cd server && npm start",
+    "both": "cd client && npm run dev & cd server && npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

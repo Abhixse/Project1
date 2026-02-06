@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- Content Security Policy - Allow Google Maps -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob: https:; frame-src 'self' https://www.google.com https://maps.google.com https://www.google.co.in https://maps.google.co.in; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https:;" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+
+  <title>MSP PrintPack - Premium Printing & Packaging Solutions</title>
+  <meta name="description"
+    content="MSP PrintPack offers premium printing and packaging solutions. Custom packaging, brand identity, offset printing, and eco-friendly packaging for businesses worldwide." />
+  <meta name="author" content="MSP PrintPack" />
+  <meta name="keywords"
+    content="printing, packaging, custom boxes, brand identity, offset printing, digital printing, eco-friendly packaging" />
+  <meta name="theme-color" content="#1a4f47" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="MSP PrintPack - Premium Printing & Packaging Solutions" />
+  <meta property="og:description"
+    content="Transform your brand with our premium printing and packaging solutions. Custom packaging, brand identity, and eco-friendly options." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MSP PrintPack" />
+  <meta property="og:image" content="https://mspprintpack.com/og-image.jpg" />
+  <meta property="og:url" content="https://mspprintpack.com" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@MSPPrintPack" />
+  <meta name="twitter:title" content="MSP PrintPack - Premium Printing & Packaging Solutions" />
+  <meta name="twitter:description" content="Transform your brand with our premium printing and packaging solutions." />
+  <meta name="twitter:image" content="https://mspprintpack.com/twitter-image.jpg" />
+
+  <!-- Links -->
+  <link rel="canonical" href="https://mspprintpack.com" />
+  <link rel="icon" type="image/png" href="/vite.svg" />
+  <link rel="apple-touch-icon" href="/vite.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Preload Critical Resources -->
+  <link rel="preload" as="style" href="/src/index.css" />
+</head>
+
+<body class="antialiased">
+  <noscript>
+    <div
+      style="display: flex; align-items: center; justify-content: center; height: 100vh; background: #1a2c2a; color: #f0f7f6; font-family: system-ui, -apple-system, sans-serif; padding: 20px; text-align: center;">
+      <div>
+        <h1 style="margin: 0 0 10px 0; font-size: 24px;">JavaScript is Disabled</h1>
+        <p style="margin: 0; opacity: 0.8;">Please enable JavaScript to use this application.</p>
+      </div>
+    </div>
+  </noscript>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
