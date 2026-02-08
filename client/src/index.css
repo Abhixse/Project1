@@ -58,7 +58,7 @@
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, rgba(40, 40, 40, 0.95) 0%, rgba(0, 106, 192, 0.15) 100%);
-    --gradient-brand: linear-gradient(135deg, #006ac0 0%, #f0fdff 50%, #006ac0 100%);
+    --gradient-brand: linear-gradient(135deg, #9AD2CB 0%, #f0fdff 50%, #9AD2CB 100%);
     --gradient-teal: var(--gradient-brand);
     --gradient-overlay: linear-gradient(180deg, transparent 0%, rgba(40, 40, 40, 0.8) 100%);
     /* Testimonial overlay for improved contrast (theme-aware) */
