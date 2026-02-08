@@ -113,7 +113,7 @@
     /* Light mode gradients */
     --gradient-hero: linear-gradient(135deg, rgba(240, 253, 255, 0.95) 0%, rgba(0, 106, 192, 0.08) 100%);
     --gradient-brand: linear-gradient(135deg, #006ac0 0%, #f0fdff 50%, #006ac0 100%);
-    --gradient-teal: var(--gradient-brand);
+    --gradient-teal: linear-gradient(135deg, #282828 0%, #006ac0 100%);
     --gradient-overlay: linear-gradient(180deg, transparent 0%, rgba(40, 40, 40, 0.1) 100%);
     --testimonial-overlay: rgba(255,255,255,0.06);
 
