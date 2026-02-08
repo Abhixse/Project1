@@ -9,6 +9,7 @@ import {
   TestimonialsSection,
   VezoBusinessSection,
   PackingMaterialsSection,
+  IndustriesSection,
 } from "@/components/sections";
 import businessImage from "@/assets/hero-packaging.jpg";
 
@@ -56,6 +57,7 @@ const Index = () => {
       <FeaturesSection />
       <AboutSection />
       <VezoBusinessSection />
+      <IndustriesSection />
       <PackingMaterialsSection />
       <InnovationSection />
       <ProductsSection />
