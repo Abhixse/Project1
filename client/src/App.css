@@ -70,8 +70,7 @@ textarea:focus-visible {
 html.light .hero-gradient,
 body.light .hero-gradient,
 :root.light .hero-gradient {
-  background: #ffffff;
-  background-image: none;
+  background: hsl(var(--background));
 }
 
 /* Text gradients */
@@ -296,7 +295,7 @@ select:focus {
   }
   
   a {
-    color: #0066cc;
+    color: hsl(var(--primary));
   }
   
   .no-print {

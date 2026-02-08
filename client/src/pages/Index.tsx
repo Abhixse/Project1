@@ -48,7 +48,6 @@ const Index = () => {
                   className="h-56 w-full object-cover"
                   loading="lazy"
                 />
-                <span>sbjb</span>
               </div>
             </div>
           </div>

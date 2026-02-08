@@ -59,6 +59,7 @@
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, rgba(40, 40, 40, 0.95) 0%, rgba(0, 106, 192, 0.15) 100%);
     --gradient-brand: linear-gradient(135deg, #006ac0 0%, #f0fdff 50%, #006ac0 100%);
+    --gradient-teal: var(--gradient-brand);
     --gradient-overlay: linear-gradient(180deg, transparent 0%, rgba(40, 40, 40, 0.8) 100%);
     /* Testimonial overlay for improved contrast (theme-aware) */
     --testimonial-overlay: rgba(0,0,0,0.45);
@@ -78,6 +79,9 @@
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 0 0% 28%;
     --sidebar-ring: 202 100% 38%;
+    /* WhatsApp brand color */
+    --whatsapp: #25D366;
+    --whatsapp-rgb: 37 211 102;
   }
 
   .light {
@@ -109,6 +113,7 @@
     /* Light mode gradients */
     --gradient-hero: linear-gradient(135deg, rgba(240, 253, 255, 0.95) 0%, rgba(0, 106, 192, 0.08) 100%);
     --gradient-brand: linear-gradient(135deg, #006ac0 0%, #f0fdff 50%, #006ac0 100%);
+    --gradient-teal: var(--gradient-brand);
     --gradient-overlay: linear-gradient(180deg, transparent 0%, rgba(40, 40, 40, 0.1) 100%);
     --testimonial-overlay: rgba(255,255,255,0.06);
 
@@ -287,6 +292,23 @@
   .testimonial-overlay {
     background: linear-gradient(180deg, var(--testimonial-overlay), transparent);
     mix-blend-mode: overlay;
+  }
+
+  /* WhatsApp button styling */
+  .whatsapp-btn {
+    background: var(--whatsapp);
+    color: white;
+    box-shadow: 0 6px 18px rgba(var(--whatsapp-rgb), 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .whatsapp-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .whatsapp-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(var(--whatsapp-rgb), 0.15), 0 6px 18px rgba(var(--whatsapp-rgb), 0.15);
   }
 }
 
