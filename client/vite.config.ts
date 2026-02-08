@@ -4,7 +4,10 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({ mode }) => {
+  const apiUrl = process.env.VITE_API_URL || "http://localhost:4000";
+
+  return {
   server: {
     host: "::",
     port: 8080,
@@ -13,8 +16,9 @@ export default defineConfig(({ mode }) => ({
     },
     proxy: {
       "/api": {
-        target: "http://localhost:4000",
+        target: apiUrl,
         changeOrigin: true,
+        secure: true,
       },
     },
     headers: {
@@ -25,7 +29,7 @@ export default defineConfig(({ mode }) => ({
       "Permissions-Policy":
         "camera=(), microphone=(), geolocation=(), payment=()",
       "Content-Security-Policy":
-        "connect-src 'self' https: http://localhost:* 'unsafe-eval' ws://localhost:* ws:; frame-src https://www.google.com https://www.google.co.in;",
+        `connect-src 'self' ${apiUrl} https: http://localhost:* 'unsafe-eval' ws://localhost:* ws:; frame-src https://www.google.com https://www.google.co.in;`,
     },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(
@@ -75,4 +79,5 @@ export default defineConfig(({ mode }) => ({
     include: ["react", "react-dom", "react-router-dom"],
     exclude: ["lovable-tagger"],
   },
-}));
+  };
+});
