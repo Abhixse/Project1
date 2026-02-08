@@ -19,13 +19,9 @@ const testimonials = [
 export const TestimonialsSection = () => {
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Colorful background panels */}
-      <div className="absolute inset-0 flex">
-        <div className="flex-1 bg-gold-dark" />
-        <div className="flex-1 bg-secondary" />
-        <div className="flex-1 bg-primary" />
-        <div className="flex-1 bg-accent" />
-        <div className="flex-1 bg-teal-dark" />
+      {/* Black → Blue → Black gradient background */}
+      <div className="absolute inset-0 testimonial-bg">
+        <div className="absolute inset-0 testimonial-overlay pointer-events-none" />
       </div>
 
       {/* Overlay text */}
