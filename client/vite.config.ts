@@ -11,6 +11,12 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
+    proxy: {
+      "/api": {
+        target: "http://localhost:4000",
+        changeOrigin: true,
+      },
+    },
     headers: {
       "X-Content-Type-Options": "nosniff",
       "X-Frame-Options": "DENY",
@@ -19,7 +25,7 @@ export default defineConfig(({ mode }) => ({
       "Permissions-Policy":
         "camera=(), microphone=(), geolocation=(), payment=()",
       "Content-Security-Policy":
-        "frame-src https://www.google.com https://www.google.co.in;",
+        "connect-src 'self' https: http://localhost:* 'unsafe-eval' ws://localhost:* ws:; frame-src https://www.google.com https://www.google.co.in;",
     },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(
