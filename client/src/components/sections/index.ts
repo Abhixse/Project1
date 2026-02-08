@@ -6,3 +6,4 @@ export { ProductsSection } from "./ProductsSection";
 export { PackagingTypesSection } from "./PackagingTypesSection";
 export { TestimonialsSection } from "./TestimonialsSection";
 export { VezoBusinessSection } from "./VezoBusiness";
+export { PackingMaterialsSection } from "./PackingMaterialsSection";
