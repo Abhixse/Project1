@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   Pill,
   UtensilsCrossed,
@@ -9,9 +10,10 @@ import {
   Calendar,
   Code,
   Building2,
-  Package,
   Wine,
   GraduationCap,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 export const IndustriesSection = () => {
@@ -19,147 +21,230 @@ export const IndustriesSection = () => {
     {
       name: "Pharmaceuticals",
       icon: Pill,
-      color: "text-blue-600 dark:text-blue-400",
-      bgColor: "from-blue-500/10 to-blue-500/5",
+      iconBg: "bg-blue-500/10 dark:bg-blue-400/20",
+      iconColor: "text-blue-600 dark:text-blue-400",
     },
     {
       name: "Foods Industries",
       icon: UtensilsCrossed,
-      color: "text-orange-600 dark:text-orange-400",
-      bgColor: "from-orange-500/10 to-orange-500/5",
+      iconBg: "bg-orange-500/10 dark:bg-orange-400/20",
+      iconColor: "text-orange-600 dark:text-orange-400",
     },
     {
       name: "Hotel & Restaurants",
       icon: Hotel,
-      color: "text-amber-600 dark:text-amber-400",
-      bgColor: "from-amber-500/10 to-amber-500/5",
+      iconBg: "bg-amber-500/10 dark:bg-amber-400/20",
+      iconColor: "text-amber-600 dark:text-amber-400",
     },
     {
       name: "Design Agencies",
       icon: Palette,
-      color: "text-pink-600 dark:text-pink-400",
-      bgColor: "from-pink-500/10 to-pink-500/5",
+      iconBg: "bg-pink-500/10 dark:bg-pink-400/20",
+      iconColor: "text-pink-600 dark:text-pink-400",
     },
     {
       name: "Automobiles",
       icon: Car,
-      color: "text-red-600 dark:text-red-400",
-      bgColor: "from-red-500/10 to-red-500/5",
+      iconBg: "bg-red-500/10 dark:bg-red-400/20",
+      iconColor: "text-red-600 dark:text-red-400",
     },
     {
       name: "Banking",
       icon: Landmark,
-      color: "text-slate-600 dark:text-slate-400",
-      bgColor: "from-slate-500/10 to-slate-500/5",
+      iconBg: "bg-slate-500/10 dark:bg-slate-400/20",
+      iconColor: "text-slate-600 dark:text-slate-300",
     },
     {
       name: "Event Organizers",
       icon: Calendar,
-      color: "text-purple-600 dark:text-purple-400",
-      bgColor: "from-purple-500/10 to-purple-500/5",
+      iconBg: "bg-purple-500/10 dark:bg-purple-400/20",
+      iconColor: "text-purple-600 dark:text-purple-400",
     },
     {
       name: "IT & Software",
       icon: Code,
-      color: "text-cyan-600 dark:text-cyan-400",
-      bgColor: "from-cyan-500/10 to-cyan-500/5",
+      iconBg: "bg-cyan-500/10 dark:bg-cyan-400/20",
+      iconColor: "text-cyan-600 dark:text-cyan-400",
     },
     {
       name: "Real Estate",
       icon: Building2,
-      color: "text-green-600 dark:text-green-400",
-      bgColor: "from-green-500/10 to-green-500/5",
+      iconBg: "bg-green-500/10 dark:bg-green-400/20",
+      iconColor: "text-green-600 dark:text-green-400",
     },
     {
       name: "Industry & Manufacturers",
       icon: Factory,
-      color: "text-gray-600 dark:text-gray-400",
-      bgColor: "from-gray-500/10 to-gray-500/5",
+      iconBg: "bg-gray-500/10 dark:bg-gray-400/20",
+      iconColor: "text-gray-600 dark:text-gray-300",
     },
     {
       name: "Clubs & Resorts",
       icon: Wine,
-      color: "text-rose-600 dark:text-rose-400",
-      bgColor: "from-rose-500/10 to-rose-500/5",
+      iconBg: "bg-rose-500/10 dark:bg-rose-400/20",
+      iconColor: "text-rose-600 dark:text-rose-400",
     },
     {
       name: "Educational Institutes",
       icon: GraduationCap,
-      color: "text-indigo-600 dark:text-indigo-400",
-      bgColor: "from-indigo-500/10 to-indigo-500/5",
+      iconBg: "bg-indigo-500/10 dark:bg-indigo-400/20",
+      iconColor: "text-indigo-600 dark:text-indigo-400",
     },
   ];
 
+  const total = industries.length;
+  const slides = [industries[total - 1], ...industries, industries[0]];
+
+  const [index, setIndex] = useState(1);
+  const [transition, setTransition] = useState(true);
+  const [isMobileSlider, setIsMobileSlider] = useState(false);
+
+  // Responsive detection
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileSlider(window.innerWidth <= 471);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const next = () => {
+    if (!transition) return;
+    setIndex((prev) => prev + 1);
+  };
+
+  const prev = () => {
+    if (!transition) return;
+    setIndex((prev) => prev - 1);
+  };
+
+  // Infinite loop fix
+  useEffect(() => {
+    if (!isMobileSlider) return;
+
+    if (index === 0) {
+      setTimeout(() => {
+        setTransition(false);
+        setIndex(total);
+      }, 500);
+    }
+
+    if (index === total + 1) {
+      setTimeout(() => {
+        setTransition(false);
+        setIndex(1);
+      }, 500);
+    }
+  }, [index, isMobileSlider, total]);
+
+  useEffect(() => {
+    if (!transition) {
+      const timer = setTimeout(() => setTransition(true), 50);
+      return () => clearTimeout(timer);
+    }
+  }, [transition]);
+
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-16 bg-background">
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <span className="text-secondary text-sm font-medium uppercase tracking-wider block mb-3">
-            Our Reach
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Industries We Serve
           </h2>
-          <p className="text-lg text-foreground/70 leading-relaxed">
-            We provide comprehensive packaging solutions tailored to meet the unique 
-            requirements of diverse industries across the globe.
+          <p className="text-lg text-muted-foreground">
+            We provide comprehensive packaging solutions tailored to diverse
+            industries.
           </p>
         </div>
 
-        {/* Industries Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {industries.map((industry, index) => {
-            const Icon = industry.icon;
-            return (
-              <div
-                key={index}
-                className={`group relative bg-gradient-to-br ${industry.bgColor} backdrop-blur-sm border border-border/40 rounded-xl p-6 hover:border-secondary/50 transition-all duration-300 hover:shadow-md hover:bg-gradient-to-br hover:from-secondary/5 hover:to-primary/5 cursor-pointer`}
-              >
-                {/* Icon */}
-                <div className="mb-4 inline-flex p-3 rounded-lg bg-background/40 group-hover:bg-background/60 transition-colors duration-300">
-                  <Icon className={`w-6 h-6 ${industry.color} transition-transform group-hover:scale-110 duration-300`} />
+        {/* Desktop / Tablet Grid */}
+        {!isMobileSlider && (
+          <div className="grid gap-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+            {industries.map((industry, idx) => {
+              const Icon = industry.icon;
+              return (
+                <div
+                  key={idx}
+                  className="group rounded-xl p-6 bg-card border border-border
+                             transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                >
+                  <div
+                    className={`mb-4 inline-flex p-3 rounded-lg ${industry.iconBg}`}
+                  >
+                    <Icon
+                      className={`w-6 h-6 ${industry.iconColor}
+                                  transition-transform duration-300 group-hover:scale-110`}
+                    />
+                  </div>
+
+                  <h3 className="font-semibold text-foreground">
+                    {industry.name}
+                  </h3>
                 </div>
+              );
+            })}
+          </div>
+        )}
 
-                {/* Content */}
-                <h3 className="text-base font-semibold text-foreground group-hover:text-secondary transition-colors duration-300">
-                  {industry.name}
-                </h3>
+        {/* Mobile Slider */}
+        {isMobileSlider && (
+          <div className="relative overflow-hidden w-full">
+            <div
+              className={`flex ${
+                transition
+                  ? "transition-transform duration-500 ease-in-out"
+                  : ""
+              }`}
+              style={{
+                transform: `translateX(-${index * 100}%)`,
+              }}
+            >
+              {slides.map((industry, i) => {
+                const Icon = industry.icon;
+                return (
+                  <div key={i} className="w-full flex-shrink-0 px-4">
+                    <div
+                      className="group rounded-xl p-6 bg-card border border-border
+                                 transition-all duration-300 hover:shadow-lg"
+                    >
+                      <div
+                        className={`mb-4 inline-flex p-3 rounded-lg ${industry.iconBg}`}
+                      >
+                        <Icon
+                          className={`w-6 h-6 ${industry.iconColor}
+                                      transition-transform duration-300 group-hover:scale-110`}
+                        />
+                      </div>
 
-                {/* Bottom accent */}
-                <div className="mt-4 h-1 w-0 bg-secondary rounded-full group-hover:w-8 transition-all duration-300" />
-              </div>
-            );
-          })}
-        </div>
+                      <h3 className="text-base font-semibold text-foreground">
+                        {industry.name}
+                      </h3>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
 
-        {/* Bottom Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">
-              12+
+            {/* Controls */}
+            <div className="flex justify-center gap-4 mt-6">
+              <button
+                onClick={prev}
+                className="p-2 border border-border rounded-full bg-background hover:bg-muted transition"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                onClick={next}
+                className="p-2 border border-border rounded-full bg-background hover:bg-muted transition"
+              >
+                <ChevronRight size={18} />
+              </button>
             </div>
-            <p className="text-sm text-foreground/60">Industries Served</p>
           </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">
-              500+
-            </div>
-            <p className="text-sm text-foreground/60">Active Clients</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">
-              1000+
-            </div>
-            <p className="text-sm text-foreground/60">Custom Solutions</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">
-              99%
-            </div>
-            <p className="text-sm text-foreground/60">Client Satisfaction</p>
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );

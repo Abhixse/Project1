@@ -57,7 +57,7 @@ export const PackingMaterialsSection = () => {
         </div>
 
         {/* Materials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {materials.map((material, index) => {
             const Icon = material.icon;
             return (

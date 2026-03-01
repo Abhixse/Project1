@@ -4,36 +4,61 @@ const packagingTypes = [
   {
     number: "01",
     title: "Minimalist Packaging",
-    description: "Create a clean and simple design that focuses on the essential elements of your product. Minimalist packaging often uses limited colors and sleek typography to convey a sense of elegance and sophistication.",
+    description:
+      "Clean, simple designs that highlight only what matters. Uses limited colors and refined typography to create a premium, elegant look.",
   },
   {
     number: "02",
     title: "Eco-Friendly Packaging",
-    description: "Use environmentally friendly materials such as recycled paper or biodegradable materials for your packaging. Highlight the sustainable aspect of your product and encourage customers to recycle the packaging.",
+    description:
+      "Sustainable materials like recycled paper and biodegradable components that reduce environmental impact and promote responsible consumption.",
   },
   {
     number: "03",
     title: "Interactive Packaging",
-    description: "Engage customers with interactive packaging that incorporates elements like pull-out tabs, hidden compartments, or augmented reality experiences. This can create a memorable and immersive customer engagement.",
+    description:
+      "Engaging elements such as pull tabs, hidden features, or AR experiences that create memorable and immersive customer interactions.",
   },
   {
     number: "04",
     title: "Customizable Packaging",
-    description: "Allow customers to personalize their packaging by offering options for color schemes, patterns, or adding their names or messages. This can create a sense of ownership and make the product feel more special.",
+    description:
+      "Personalized colors, patterns, or branding elements that give customers a unique and exclusive product experience.",
   },
 ];
 
 export const PackagingTypesSection = () => {
   return (
-    <section className="py-24 bg-card">
+    <section className="py-20 bg-background">
       <div className="section-container">
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {packagingTypes.map((type) => (
             <StaggerItem key={type.number}>
-              <div className="space-y-4 p-6 rounded-xl hover:bg-muted/50 transition-colors">
-                <span className="text-4xl font-bold text-primary/80">{type.number}</span>
-                <h3 className="text-lg font-semibold text-secondary">{type.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{type.description}</p>
+              <div
+                className="group h-full p-8 rounded-2xl bg-card border border-border
+                           transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              >
+                {/* Top Row (Number + Title aligned nicely) */}
+                <div className="flex items-start gap-4">
+                  {/* Number */}
+                  <div
+                    className="text-4xl font-bold text-primary/30 
+                                  group-hover:text-primary transition-colors"
+                  >
+                    {type.number}
+                  </div>
+
+                  {/* Title + Description */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {type.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                      {type.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             </StaggerItem>
           ))}
