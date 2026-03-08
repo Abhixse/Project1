@@ -108,7 +108,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((item) => (
               <div key={item.title} className="p-6 rounded-xl bg-card hover:bg-muted/50 transition-colors">
-                <div className="w-12 h-12 rounded-xl gradient-teal flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-blue-500 flex items-center justify-center mb-4">
                   <item.icon className="w-5 h-5 text-secondary-foreground" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>

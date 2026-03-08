@@ -13,13 +13,13 @@ const features = [
     icon: Leaf,
     title: "Sustainable",
     description: "Eco-friendly options with recyclable materials",
-    gradient: "from-mint to-mint-light",
+    gradient: "from-primary to-secondary",
   },
   {
     icon: Palette,
     title: "Design",
     description: "Creative designs that make your brand stand out",
-    gradient: "from-accent to-gold",
+    gradient: "from-primary to-secondary",
   },
 ];
 

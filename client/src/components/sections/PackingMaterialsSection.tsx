@@ -1,4 +1,5 @@
 import { Leaf, Recycle, Shield, Droplets, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const PackingMaterialsSection = () => {
   const materials = [
@@ -97,12 +98,12 @@ export const PackingMaterialsSection = () => {
           <p className="text-foreground/70 mb-6">
             All our materials are sourced responsibly and manufactured to the highest quality standards.
           </p>
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center justify-center px-8 py-3 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/90 transition-colors duration-300"
           >
             Get Started With Our Materials
-          </a>
+          </Link>
         </div>
       </div>
     </section>

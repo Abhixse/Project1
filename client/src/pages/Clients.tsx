@@ -180,7 +180,7 @@ const Clients = () => {
                 </p>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full gradient-teal flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
                     <span className="text-lg font-bold text-secondary-foreground">
                       {testimonial.author.charAt(0)}
                     </span>

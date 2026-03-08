@@ -125,7 +125,7 @@ const Services = () => {
                 </div>
 
                 <div className={`order-1 space-y-6 ${index % 2 === 1 ? "lg:order-2" : "lg:order-1"}`}>
-                  <div className="w-16 h-16 rounded-xl gradient-teal flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-xl bg-blue-500 flex items-center justify-center">
                     <service.icon className="w-8 h-8 text-secondary-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">{service.title}</h2>
@@ -165,7 +165,7 @@ const Services = () => {
             {process.map((step, index) => (
               <div key={step.step} className="relative">
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto rounded-full gradient-teal flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-blue-500 flex items-center justify-center mb-4">
                     <span className="text-xl font-bold text-secondary-foreground">{step.step}</span>
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">{step.title}</h3>

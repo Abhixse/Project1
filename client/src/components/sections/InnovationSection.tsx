@@ -63,7 +63,7 @@ export const InnovationSection = () => {
                     key={benefit}
                     className="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-secondary/10 transition-colors cursor-pointer group"
                   >
-                    <div className="w-8 h-8 rounded-full gradient-teal flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
                       <Check className="w-4 h-4 text-secondary-foreground" />
                     </div>
                     <span className="font-medium text-secondary group-hover:text-foreground transition-colors">
