@@ -1,55 +1,55 @@
 import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Package, Palette, Printer, Tag, Layers, Shirt } from "lucide-react";
-import cosmeticPackaging from "@/assets/cosmetic-packaging.jpg";
-import stationery from "@/assets/stationery.jpg";
-import ecoPackaging from "@/assets/eco-packaging.jpg";
-import tshirtMockup from "@/assets/tshirt-mockup.jpg";
-import burgerBox from "@/assets/burger-box.jpg";
-import heroPackaging from "@/assets/hero-packaging.jpg";
+import realBoxMockup from "@/assets/Real-Box-Mockup-Free-Mockup.jpg";
+import brochureFlyer from "@/assets/Broucher-7-Flyer-scaled.jpg";
+import stationeryScaled from "@/assets/Stationary-scaled.jpg";
+import tshirtMockupScaled from "@/assets/Tshirt-Mockup-scaled.jpg";
+import creativeLiterature from "@/assets/Other-Creative-Litrature.jpeg";
+import juiceBoxMockup from "@/assets/Free-Paper-Juice-Box-Mockup-e1719080027893.jpg";
 
 const services = [
   {
     icon: Package,
-    title: "Custom Packaging",
-    description: "Tailored packaging solutions designed specifically for your products. From rigid boxes to flexible pouches, we create packaging that protects and promotes.",
-    features: ["Custom sizes & shapes", "Premium materials", "Brand customization", "Eco-friendly options"],
-    image: heroPackaging,
+    title: "Mono Carton Box",
+    description: "Premium mono carton box printing and packaging solutions for pharmaceuticals and FMCG products. High-quality printing with precise die-cutting.",
+    features: ["Pharmaceutical packaging", "FMCG boxes", "Custom die-cutting", "Premium finishes"],
+    image: realBoxMockup,
   },
   {
     icon: Palette,
-    title: "Brand Identity Design",
-    description: "Complete brand identity packages including logos, business cards, letterheads, and marketing materials that create a cohesive brand experience.",
-    features: ["Logo design", "Stationery design", "Brand guidelines", "Marketing collateral"],
-    image: stationery,
+    title: "Brochure & Flyers",
+    description: "Professional brochure and flyer printing services. From design to delivery, we create impactful marketing materials that represent your brand.",
+    features: ["Multi-fold brochures", "Promotional flyers", "Corporate catalogs", "Premium paper stock"],
+    image: brochureFlyer,
   },
   {
     icon: Printer,
     title: "Offset Printing",
-    description: "High-volume, high-quality printing for catalogs, brochures, magazines, and more. Our offset presses deliver consistent, vibrant results.",
+    description: "High-volume, high-quality offset printing for catalogs, brochures, magazines, and more. Our presses deliver consistent, vibrant results.",
     features: ["CMYK & Pantone colors", "Large format options", "High volume capacity", "Consistent quality"],
-    image: cosmeticPackaging,
+    image: stationeryScaled,
   },
   {
     icon: Tag,
-    title: "Label & Sticker Printing",
-    description: "Custom labels and stickers for products, packaging, and promotions. Available in various materials, finishes, and sizes.",
-    features: ["Die-cut shapes", "Multiple finishes", "Durable materials", "Variable data printing"],
-    image: ecoPackaging,
+    title: "Promotional Material",
+    description: "Custom promotional materials to boost your brand visibility. From banners to standees, we create eye-catching marketing collateral.",
+    features: ["Banners & standees", "POP displays", "Marketing kits", "Trade show materials"],
+    image: tshirtMockupScaled,
   },
   {
     icon: Layers,
-    title: "Food Packaging",
-    description: "Safe, attractive packaging solutions for the food industry. From boxes to bags, we ensure your products stay fresh and look great.",
-    features: ["Food-safe materials", "Custom printing", "Moisture resistant", "Easy assembly"],
-    image: burgerBox,
+    title: "Creative Literature",
+    description: "Design and printing of creative literature including annual reports, coffee table books, and corporate publications with exceptional finishing.",
+    features: ["Annual reports", "Coffee table books", "Corporate publications", "Special finishes"],
+    image: creativeLiterature,
   },
   {
     icon: Shirt,
-    title: "Promotional Products",
-    description: "Custom printed merchandise including t-shirts, bags, mugs, and more. Perfect for events, giveaways, and brand promotion.",
-    features: ["Custom apparel", "Corporate gifts", "Event merchandise", "Bulk ordering"],
-    image: tshirtMockup,
+    title: "Custom Packaging",
+    description: "Tailored packaging solutions for various industries. From food packaging to gift boxes, we create custom solutions that protect and promote.",
+    features: ["Food-safe materials", "Gift packaging", "Eco-friendly options", "Custom designs"],
+    image: juiceBoxMockup,
   },
 ];
 

@@ -1,23 +1,25 @@
 import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, Check, Target, Users, Zap } from "lucide-react";
-import heroPackaging from "@/assets/hero-packaging.jpg";
-
+import packagingEquipment from "@/assets/packaging-industry-equipment.jpg";
+import foodBoxMockup from "@/assets/paper_food_box_mockup_02.png";
+import juiceBoxMockup from "@/assets/Free-Paper-Juice-Box-Mockup-e1719080027893.jpg";
+import burgerBox from "@/assets/burger-box.jpg";
 const values = [
   {
     icon: Award,
-    title: "Quality Excellence",
-    description: "We never compromise on quality. Every product that leaves our facility meets the highest standards.",
+    title: "Best Quality",
+    description: "We never compromise on quality. Every product that leaves our facility meets the highest standards of excellence.",
   },
   {
     icon: Users,
-    title: "Customer First",
-    description: "Your satisfaction is our priority. We work closely with you to bring your vision to life.",
+    title: "Creative Packaging",
+    description: "Innovative and creative packaging solutions that make your products stand out on the shelf.",
   },
   {
     icon: Target,
-    title: "Innovation Driven",
-    description: "We stay ahead with cutting-edge technology and creative solutions for modern packaging needs.",
+    title: "Environmentally Friendly",
+    description: "Committed to sustainable practices with eco-friendly materials and processes that benefit our planet.",
   },
   {
     icon: Zap,
@@ -54,8 +56,8 @@ const About = () => {
               <span className="text-gradient-teal">Print & Packaging</span>
             </h1>
             <p className="text-lg text-foreground/80 leading-relaxed">
-              For over 15 years, MSP PrintPack has been at the forefront of the printing and packaging industry,
-              delivering innovative solutions that help brands make lasting impressions.
+              One of the fastest growing design and printing companies with some of the best experts
+              serving the pharmaceutical sector. We deliver innovative packaging solutions that help brands make lasting impressions.
             </p>
           </div>
         </div>
@@ -67,8 +69,8 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <img
-                src={heroPackaging}
-                alt="Our Story"
+                src={packagingEquipment}
+                alt="Our Facility - Packaging Industry Equipment"
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-8 -right-8 glass rounded-xl p-6">
@@ -83,14 +85,14 @@ const About = () => {
                 From Humble Beginnings to Industry Leaders
               </h2>
               <p className="text-foreground/80 leading-relaxed">
-                MSP PrintPack was founded with a simple mission: to provide exceptional printing and packaging
-                solutions that help businesses stand out. What started as a small operation has grown into a
-                full-service printing and packaging company serving clients across the globe.
+                MSP Printpack is delighted to have the opportunity to provide you with business proposals
+                which would help you to have extraordinary printing and packaging solutions. We specialize
+                in pharmaceutical packaging with a focus on quality and regulatory compliance.
               </p>
               <p className="text-foreground/80 leading-relaxed">
                 Our journey has been defined by our commitment to quality, innovation, and customer satisfaction.
-                We've invested in the latest technology, assembled a team of skilled professionals, and developed
-                sustainable practices that benefit both our clients and the environment.
+                We endeavor to ensure that our printing services are in line with the set regulations. With
+                best-in-class equipment and a skilled team, we deliver excellence in every project.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
@@ -101,6 +103,46 @@ const About = () => {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Showcase Section */}
+      <section className="py-24 bg-muted/30">
+        <div className="section-container">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6 order-2 lg:order-1">
+              <span className="text-secondary text-sm font-medium uppercase tracking-wider">What We Do</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Premium Packaging Solutions
+              </h2>
+              <p className="text-foreground/80 leading-relaxed">
+                From mono carton boxes to creative literature, we offer a comprehensive range of 
+                printing and packaging solutions. Our state-of-the-art facility is equipped with 
+                modern machinery to handle projects of any scale.
+              </p>
+              <ul className="space-y-3">
+                {["Mono Carton Box Printing", "Brochure & Flyers", "Promotional Material", "Food & Beverage Packaging"].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-foreground/80">
+                    <Check className="w-5 h-5 text-secondary flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4 order-1 lg:order-2">
+              <img
+                src={foodBoxMockup}
+                alt="Food Box Packaging"
+                className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+              />
+              <img
+                src={juiceBoxMockup}
+                alt="Juice Box Packaging"
+                className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 mt-8"
+              />
             </div>
           </div>
         </div>
@@ -133,7 +175,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value) => (
               <div key={value.title} className="p-6 rounded-xl bg-card hover:bg-muted/50 transition-colors card-hover">
-                <div className="w-14 h-14 rounded-xl gradient-teal flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-xl bg-blue-500 flex items-center justify-center mb-6">
                   <value.icon className="w-6 h-6 text-secondary-foreground" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-3">{value.title}</h3>
@@ -158,7 +200,7 @@ const About = () => {
             {milestones.map((milestone, index) => (
               <div key={milestone.year} className="flex gap-6 pb-8 last:pb-0">
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full gradient-teal flex items-center justify-center text-sm font-bold text-secondary-foreground">
+                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-sm font-bold text-secondary-foreground">
                     {milestone.year.slice(2)}
                   </div>
                   {index !== milestones.length - 1 && (

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import burgerBox from "@/assets/burger-box.jpg";
+import juiceBoxMockup from "@/assets/Free-Paper-Juice-Box-Mockup-e1719080027893.jpg";
 
 const benefits = [
   "Best Quality Of Packaging",
@@ -26,7 +26,7 @@ export const InnovationSection = () => {
             <div className="relative -mx-4 sm:-mx-6 lg:mx-0">
               <div className="relative h-full min-h-[400px] lg:min-h-[500px]">
                 <img
-                  src={burgerBox}
+                  src={juiceBoxMockup}
                   alt="Best Packaging"
                   className="absolute inset-0 w-full h-full object-cover"
                 />

@@ -32,19 +32,19 @@ const Index = () => {
                 and customer trust.
               </p>
               <a
-                href="https://example.com"
+                href="https://mspprintpack.com"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center text-sm font-medium text-secondary hover:text-foreground transition-colors"
               >
-                Visit example.com
+                Visit mspprintpack.com →
               </a>
             </div>
             <div className="rounded-2xl border border-border/40 bg-muted/40 p-3 shadow-sm">
               <div className="overflow-hidden rounded-xl">
                 <img
                   src={businessImage}
-                  alt="Business showcase"
+                  alt="MSP Print Pack - Premium Box Packaging"
                   className="h-56 w-full object-cover"
                   loading="lazy"
                 />

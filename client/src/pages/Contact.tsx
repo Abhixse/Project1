@@ -12,17 +12,17 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+1 (234) 567-890", "+1 (234) 567-891"],
+    details: ["+91 98247 14385", "+91 98247 14389"],
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["info@mspprintpack.com", "sales@mspprintpack.com"],
+    details: ["info@mspprintpack.com", "mspprintpack@gmail.com"],
   },
   {
     icon: MapPin,
     title: "Address",
-    details: ["123 Print Avenue, Design City", "Business District, 12345"],
+    details: ["607-A, 6th Floor, Satya-2 Complex", "Ghatlodia, Ahmedabad-380061"],
   },
   {
     icon: Clock,
@@ -168,7 +168,7 @@ const Contact = () => {
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="+1 (234) 567-890"
+                      placeholder="+91 98247 14385"
                       value={formData.phone}
                       onChange={handleChange}
                       className="bg-background"

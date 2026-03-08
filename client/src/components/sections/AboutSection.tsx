@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Play } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import burgerBox from "@/assets/burger-box.jpg";
+import packagingEquipment from "@/assets/packaging-industry-equipment.jpg";
 
 const highlights = [
   "Low Color Press With Custom",
@@ -55,8 +55,8 @@ export const AboutSection = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden">
                 <img
-                  src={burgerBox}
-                  alt="Packaging Solutions"
+                  src={packagingEquipment}
+                  alt="MSP Print Pack Facility"
                   className="w-full h-auto object-cover rounded-2xl"
                 />
                 

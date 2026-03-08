@@ -3,6 +3,7 @@ import { NavLink } from "@/components/NavLink";
 import { Menu, X, Phone, Mail, MapPin, MessageSquare } from "lucide-react";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import mspLogo from "@/assets/logo-1.png";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -23,9 +24,9 @@ export const Header = () => {
         <div className="section-container">
           <div className="flex items-center justify-between py-2 text-sm">
             <div className="hidden md:flex items-center gap-6 text-foreground/90">
-              <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-foreground transition-colors duration-300">
+              <a href="tel:+919824714385" className="flex items-center gap-2 hover:text-foreground transition-colors duration-300">
                 <Phone className="w-3 h-3 text-foreground" />
-                <span className="text-foreground">+1 (234) 567-890</span>
+                <span className="text-foreground">+91 98247 14385</span>
               </a>
               <a href="mailto:info@mspprintpack.com" className="flex items-center gap-2 hover:text-foreground transition-colors duration-300">
                 <Mail className="w-3 h-3 text-foreground" />
@@ -34,7 +35,7 @@ export const Header = () => {
             </div>
             <div className="flex items-center gap-2 text-foreground/90">
               <MapPin className="w-3 h-3 text-foreground" />
-              <span className="text-xs md:text-sm text-foreground">123 Print Avenue, Design City</span>
+              <span className="text-xs md:text-sm text-foreground">607-A, Satya-2 Complex, Ahmedabad-380061</span>
             </div>
           </div>
         </div>
@@ -46,14 +47,7 @@ export const Header = () => {
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-
-                <span className="text-xl font-bold text-foreground">M</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-foreground">MSP</span>
-                <span className="text-[10px] text-muted-foreground -mt-1 tracking-wider">PRINT PACK</span>
-              </div>
+              <img src={mspLogo} alt="MSP Print Pack" className="h-12 w-auto" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -74,7 +68,7 @@ export const Header = () => {
             <div className="hidden lg:flex items-center gap-3">
               <ThemeToggle />
               <a
-                href="https://wa.me/1234567890?text=Hello%20from%20website"
+                href="https://wa.me/919824714385?text=Hello%20from%20website"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Message us on WhatsApp"
@@ -109,7 +103,7 @@ export const Header = () => {
                   </NavLink>
                 ))}
                 <a
-                  href="https://wa.me/1234567890?text=Hello%20from%20website"
+                  href="https://wa.me/919824714385?text=Hello%20from%20website"
                   target="_blank"
                   rel="noreferrer"
                   className="mt-2 w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-secondary text-white rounded-md font-medium"

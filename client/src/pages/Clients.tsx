@@ -1,19 +1,29 @@
 import { Layout } from "@/components/layout";
 import { Quote, Star } from "lucide-react";
-import cosmeticPackaging from "@/assets/cosmetic-packaging.jpg";
-import stationery from "@/assets/stationery.jpg";
-import ecoPackaging from "@/assets/eco-packaging.jpg";
-import tshirtMockup from "@/assets/tshirt-mockup.jpg";
+import brochureFlyer from "@/assets/Broucher-7-Flyer-scaled.jpg";
+import stationeryScaled from "@/assets/Stationary-scaled.jpg";
+import creativeLiterature from "@/assets/Other-Creative-Litrature.jpeg";
+import tshirtMockupScaled from "@/assets/Tshirt-Mockup-scaled.jpg";
+
+// Client logos
+import client1 from "@/assets/clients/1.png";
+import client7 from "@/assets/clients/7.png";
+import client8 from "@/assets/clients/8.png";
+import client9 from "@/assets/clients/9.png";
+import client10 from "@/assets/clients/10.png";
+import client12 from "@/assets/clients/12.png";
+import client13 from "@/assets/clients/13.png";
+import client14 from "@/assets/clients/14.png";
 
 const clients = [
-  { name: "TechCorp", industry: "Technology", logo: "TC" },
-  { name: "FoodBrand", industry: "Food & Beverage", logo: "FB" },
-  { name: "BeautyPlus", industry: "Cosmetics", logo: "BP" },
-  { name: "EcoLife", industry: "Sustainable Living", logo: "EL" },
-  { name: "FashionHub", industry: "Fashion & Apparel", logo: "FH" },
-  { name: "HealthFirst", industry: "Healthcare", logo: "HF" },
-  { name: "GreenPack", industry: "Eco Products", logo: "GP" },
-  { name: "LuxuryBox", industry: "Premium Goods", logo: "LB" },
+  { logo: client1 },
+  { name: "PHARMA développement", industry: "Pharmaceuticals", logo: client7 },
+  { name: "Client 3", industry: "Healthcare", logo: client8 },
+  { name: "Client 4", industry: "Cosmetics", logo: client9 },
+  { name: "Client 5", industry: "Food & Beverage", logo: client10 },
+  { name: "Client 6", industry: "Consumer Goods", logo: client12 },
+  { name: "Client 7", industry: "Retail", logo: client13 },
+  { name: "Client 8", industry: "Manufacturing", logo: client14 },
 ];
 
 const testimonials = [
@@ -45,28 +55,28 @@ const testimonials = [
 
 const caseStudies = [
   {
-    title: "BeautyPlus Rebrand",
-    category: "Cosmetic Packaging",
-    description: "Complete packaging redesign for a premium cosmetics line, resulting in 40% increase in shelf appeal.",
-    image: cosmeticPackaging,
+    title: "Corporate Brochures",
+    category: "Print Services",
+    description: "Professional brochure and flyer printing services for pharmaceutical companies with premium finishes.",
+    image: brochureFlyer,
   },
   {
-    title: "TechCorp Corporate Identity",
+    title: "Corporate Stationery",
     category: "Brand Identity",
-    description: "Full corporate stationery suite including business cards, letterheads, and presentation folders.",
-    image: stationery,
+    description: "Complete corporate stationery suite including business cards, letterheads, and presentation folders.",
+    image: stationeryScaled,
   },
   {
-    title: "EcoLife Sustainable Packaging",
-    category: "Eco-Friendly",
-    description: "Development of 100% recyclable packaging using innovative materials and printing techniques.",
-    image: ecoPackaging,
+    title: "Creative Literature",
+    category: "Publications",
+    description: "Annual reports, coffee table books, and corporate publications with exceptional finishing.",
+    image: creativeLiterature,
   },
   {
-    title: "FashionHub Merchandise",
-    category: "Promotional Products",
-    description: "Custom printed merchandise for seasonal campaigns including apparel and accessories.",
-    image: tshirtMockup,
+    title: "Promotional Materials",
+    category: "Marketing",
+    description: "Custom printed promotional materials for brand visibility and marketing campaigns.",
+    image: tshirtMockupScaled,
   },
 ];
 
@@ -102,13 +112,11 @@ const Clients = () => {
             {clients.map((client) => (
               <div
                 key={client.name}
-                className="p-8 rounded-xl bg-card hover:bg-muted transition-colors text-center card-hover"
+                className="p-6 rounded-xl bg-card hover:bg-muted transition-colors text-center card-hover"
               >
-                <div className="w-20 h-20 mx-auto rounded-2xl gradient-teal flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-secondary-foreground">{client.logo}</span>
+                <div className="w-24 h-24 mx-auto rounded-2xl bg-background border border-border flex items-center justify-center mb-4 overflow-hidden">
+                  <img src={client.logo} alt={client.name} className="w-full h-full object-contain p-2" />
                 </div>
-                <h3 className="font-semibold text-foreground">{client.name}</h3>
-                <p className="text-sm text-foreground/75">{client.industry}</p>
               </div>
             ))}
           </div>

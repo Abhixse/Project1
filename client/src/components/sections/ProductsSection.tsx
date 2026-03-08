@@ -1,31 +1,31 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
-import cosmeticPackaging from "@/assets/cosmetic-packaging.jpg";
-import stationery from "@/assets/stationery.jpg";
-import ecoPackaging from "@/assets/eco-packaging.jpg";
-import tshirtMockup from "@/assets/tshirt-mockup.jpg";
+import realBoxMockup from "@/assets/Real-Box-Mockup-Free-Mockup.jpg";
+import brochureFlyer from "@/assets/Broucher-7-Flyer-scaled.jpg";
+import stationeryScaled from "@/assets/Stationary-scaled.jpg";
+import creativeLiterature from "@/assets/Other-Creative-Litrature.jpeg";
 
 const products = [
   {
-    title: "Cosmetic Packaging",
-    image: cosmeticPackaging,
+    title: "Mono Carton Box",
+    image: realBoxMockup,
     category: "Premium",
   },
   {
-    title: "Brand Identity",
-    image: stationery,
+    title: "Brochure & Flyers",
+    image: brochureFlyer,
+    category: "Print",
+  },
+  {
+    title: "Corporate Stationery",
+    image: stationeryScaled,
     category: "Corporate",
   },
   {
-    title: "Eco Packaging",
-    image: ecoPackaging,
-    category: "Sustainable",
-  },
-  {
-    title: "Apparel Printing",
-    image: tshirtMockup,
-    category: "Custom",
+    title: "Creative Literature",
+    image: creativeLiterature,
+    category: "Publications",
   },
 ];
 

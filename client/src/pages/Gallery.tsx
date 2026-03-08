@@ -5,71 +5,74 @@ import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 
-import cosmeticPackaging from "@/assets/cosmetic-packaging.jpg";
-import stationery from "@/assets/stationery.jpg";
-import ecoPackaging from "@/assets/eco-packaging.jpg";
-import tshirtMockup from "@/assets/tshirt-mockup.jpg";
-import heroPackaging from "@/assets/hero-packaging.jpg";
-import burgerBox from "@/assets/burger-box.jpg";
+// MSP Print Pack images
+import realBoxMockup from "@/assets/Real-Box-Mockup-Free-Mockup.jpg";
+import brochureFlyer from "@/assets/Broucher-7-Flyer-scaled.jpg";
+import stationeryScaled from "@/assets/Stationary-scaled.jpg";
+import tshirtMockupScaled from "@/assets/Tshirt-Mockup-scaled.jpg";
+import creativeLiterature from "@/assets/Other-Creative-Litrature.jpeg";
+import juiceBoxMockup from "@/assets/Free-Paper-Juice-Box-Mockup-e1719080027893.jpg";
+import foodBoxMockup from "@/assets/paper_food_box_mockup_02.png";
+import packagingEquipment from "@/assets/packaging-industry-equipment.jpg";
 
-const categories = ["All", "Cosmetic", "Corporate", "Eco-Friendly", "Food", "Custom"];
+const categories = ["All", "Packaging", "Print", "Corporate", "Promotional", "Literature"];
 
 const products = [
   {
     id: 1,
-    title: "Luxury Cosmetic Box",
-    image: cosmeticPackaging,
-    category: "Cosmetic",
-    description: "Premium packaging for beauty and skincare products with foil stamping and embossing.",
+    title: "Mono Carton Box",
+    image: realBoxMockup,
+    category: "Packaging",
+    description: "Premium mono carton box packaging for pharmaceuticals and FMCG products with precise die-cutting.",
   },
   {
     id: 2,
-    title: "Corporate Stationery",
-    image: stationery,
-    category: "Corporate",
-    description: "Complete brand identity packages including letterheads, cards, and envelopes.",
+    title: "Brochures & Flyers",
+    image: brochureFlyer,
+    category: "Print",
+    description: "Professional multi-fold brochures and flyers with premium paper stock and vibrant printing.",
   },
   {
     id: 3,
-    title: "Sustainable Packaging",
-    image: ecoPackaging,
-    category: "Eco-Friendly",
-    description: "100% recyclable and biodegradable packaging solutions for eco-conscious brands.",
+    title: "Corporate Stationery",
+    image: stationeryScaled,
+    category: "Corporate",
+    description: "Complete corporate identity packages including business cards, letterheads, and envelopes.",
   },
   {
     id: 4,
-    title: "Custom Apparel Tags",
-    image: tshirtMockup,
-    category: "Custom",
-    description: "Branded hang tags and labels for fashion and apparel businesses.",
+    title: "Promotional T-Shirts",
+    image: tshirtMockupScaled,
+    category: "Promotional",
+    description: "Custom printed promotional apparel and merchandise for marketing campaigns.",
   },
   {
     id: 5,
-    title: "Premium Gift Box",
-    image: heroPackaging,
-    category: "Cosmetic",
-    description: "Elegant gift packaging with magnetic closure and custom inserts.",
+    title: "Creative Literature",
+    image: creativeLiterature,
+    category: "Literature",
+    description: "Annual reports, coffee table books, and corporate publications with special finishes.",
   },
   {
     id: 6,
-    title: "Food Packaging",
-    image: burgerBox,
-    category: "Food",
-    description: "Food-grade packaging for restaurants, cafes, and food delivery services.",
+    title: "Juice Box Packaging",
+    image: juiceBoxMockup,
+    category: "Packaging",
+    description: "Food-grade beverage packaging with attractive designs for maximum shelf appeal.",
   },
   {
     id: 7,
-    title: "Eco Kraft Boxes",
-    image: ecoPackaging,
-    category: "Eco-Friendly",
-    description: "Natural kraft paper boxes with minimal environmental impact.",
+    title: "Food Box Packaging",
+    image: foodBoxMockup,
+    category: "Packaging",
+    description: "Custom food-safe packaging solutions for restaurants and food businesses.",
   },
   {
     id: 8,
-    title: "Brand Presentation",
-    image: stationery,
+    title: "Our Facility",
+    image: packagingEquipment,
     category: "Corporate",
-    description: "Professional presentation folders and marketing materials.",
+    description: "State-of-the-art printing and packaging facility with modern equipment.",
   },
 ];
 

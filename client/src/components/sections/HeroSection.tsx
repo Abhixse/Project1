@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@/assets/hero-packaging.jpg";
+import heroImage from "@/assets/Real-Box-Mockup-Free-Mockup.jpg";
 
 export const HeroSection = () => {
   return (

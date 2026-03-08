@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import mspLogo from "@/assets/logo-1.png";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -10,12 +11,12 @@ const quickLinks = [
 ];
 
 const services = [
-  "Custom Packaging",
-  "Brand Identity",
+  "Mono Carton Box",
+  "Brochure & Flyers",
+  "Promotional Material",
+  "Creative Literature",
   "Offset Printing",
-  "Digital Printing",
-  "Label Printing",
-  "Promotional Items",
+  "Custom Packaging",
 ];
 
 const socialLinks = [
@@ -32,13 +33,7 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-xl font-bold text-background">M</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-foreground">MSP</span>
-                <span className="text-[10px] text-muted-foreground -mt-1 tracking-wider">PRINT PACK</span>
-              </div>
+              <img src={mspLogo} alt="MSP Print Pack" className="h-12 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               MSP PrintPack is delighted to have the opportunity to provide you with business proposal
@@ -94,14 +89,14 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
                 <span className="text-foreground/80 text-sm">
-                  123 Print Avenue, Design City,<br />
-                  Business District, 12345
+                  607-A, 6th Floor, Satya-2 Complex,<br />
+                  Ghatlodia, Ahmedabad-380061
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
-                <a href="tel:+1234567890" className="text-foreground/80 text-sm hover:text-foreground transition-colors">
-                  +1 (234) 567-890
+                <a href="tel:+919824714385" className="text-foreground/80 text-sm hover:text-foreground transition-colors">
+                  +91 98247 14385
                 </a>
               </li>
               <li className="flex items-center gap-3">
