@@ -23,8 +23,24 @@ const features = [
   },
 ];
 
-// 👇 Duplicate first slide at end
+// 👇 Duplicate first slide at end (for mobile carousel)
 const slides = [...features, features[0]];
+
+// Feature Card Component
+const FeatureCard = ({ feature }: { feature: typeof features[0] }) => {
+  const Icon = feature.icon;
+  return (
+    <div className="p-6 rounded-xl bg-card border border-border/50 text-center h-full">
+      <div
+        className={`w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-4 bg-gradient-to-br ${feature.gradient}`}
+      >
+        <Icon className="w-6 h-6 text-background" />
+      </div>
+      <h3 className="font-semibold mb-2">{feature.title}</h3>
+      <p className="text-sm text-muted-foreground">{feature.description}</p>
+    </div>
+  );
+};
 
 export const FeaturesSection = () => {
   const [index, setIndex] = useState(0);
@@ -65,8 +81,17 @@ export const FeaturesSection = () => {
   return (
     <section className="py-20 bg-background overflow-hidden">
       <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Slider */}
+        {/* Desktop: Grid layout showing all cards */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6">
+          {features.map((feature, i) => (
+            <AnimatedSection key={i} direction="up" delay={i * 0.1}>
+              <FeatureCard feature={feature} />
+            </AnimatedSection>
+          ))}
+        </div>
+
+        {/* Mobile: Carousel slider */}
+        <div className="md:hidden">
           <div className="relative w-full overflow-hidden">
             <div
               className={`flex gap-6 ${
@@ -78,29 +103,13 @@ export const FeaturesSection = () => {
                 transform: `translateX(calc(-${index} * (75vw + 1.5rem)))`,
               }}
             >
-              {slides.map((feature, i) => {
-                const Icon = feature.icon;
-
-                return (
-                  <div key={i} className="w-[75vw] shrink-0">
-                    <StaggerItem>
-                      <div className="p-6 rounded-xl bg-card border border-border/50 text-center">
-                        <div
-                          className={`w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-4 bg-gradient-to-br ${feature.gradient}`}
-                        >
-                          <Icon className="w-6 h-6 text-background" />
-                        </div>
-
-                        <h3 className="font-semibold mb-2">{feature.title}</h3>
-
-                        <p className="text-sm text-muted-foreground">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </StaggerItem>
-                  </div>
-                );
-              })}
+              {slides.map((feature, i) => (
+                <div key={i} className="w-[75vw] shrink-0">
+                  <StaggerItem>
+                    <FeatureCard feature={feature} />
+                  </StaggerItem>
+                </div>
+              ))}
             </div>
 
             {/* Controls */}
@@ -122,11 +131,6 @@ export const FeaturesSection = () => {
               </button>
             </div>
           </div>
-
-          {/* Right Content */}
-          <AnimatedSection direction="right" delay={0.2}>
-            <div>{/* trusted brands section */}</div>
-          </AnimatedSection>
         </div>
       </div>
     </section>
