@@ -7,6 +7,7 @@ import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import MapComponent from "@/components/MapComponent";
+import emailjs from "@emailjs/browser";
 
 const contactInfo = [
   {
@@ -33,6 +34,7 @@ const contactInfo = [
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -49,17 +51,39 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+    setIsSending(true);
 
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err.error || "Failed to send message");
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    try {
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("Email service is not configured. Please contact support.");
       }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: formData.name,
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          subject: formData.subject,
+          message: formData.message,
+          sent_at: new Date().toLocaleString("en-IN", {
+            dateStyle: "medium",
+            timeStyle: "short",
+          }),
+          to_name: "MSP Print Pack",
+          reply_to: formData.email,
+        },
+        {
+          publicKey,
+        },
+      );
 
       toast({
         title: "Message Sent!",
@@ -80,6 +104,8 @@ const Contact = () => {
         description: error?.message || "Unable to send message. Please try again later.",
         variant: "destructive",
       });
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -214,8 +240,14 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" variant="secondary" className="glow-teal group">
-                  Send Message
+                <Button
+                  type="submit"
+                  size="lg"
+                  variant="secondary"
+                  className="glow-teal group"
+                  disabled={isSending}
+                >
+                  {isSending ? "Sending..." : "Send Message"}
                   <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </form>

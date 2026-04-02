@@ -6,11 +6,12 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const apiUrl = process.env.VITE_API_URL || "http://localhost:4000";
+  const devPort = Number(process.env.VITE_PORT || process.env.PORT || 5173);
 
   return {
   server: {
-    host: "::",
-    port: 8080,
+    host: "127.0.0.1",
+    port: devPort,
     hmr: {
       overlay: false,
     },
