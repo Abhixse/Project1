@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "@/hooks/useTheme";
 import { AdminAuthProvider, useAdminAuth } from "@/context/AdminAuthContext";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import { Analytics } from "@vercel/analytics/react";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -86,6 +87,7 @@ const App = () => (
             <BrowserRouter>
               <AppRoutes />
             </BrowserRouter>
+            <Analytics />
           </TooltipProvider>
         </AdminAuthProvider>
       </ThemeProvider>
