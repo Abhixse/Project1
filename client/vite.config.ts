@@ -7,8 +7,10 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => {
   const apiUrl = process.env.VITE_API_URL || "http://localhost:4000";
   const devPort = Number(process.env.VITE_PORT || process.env.PORT || 5173);
+  const base = mode === "production" ? "./" : "/";
 
   return {
+  base,
   server: {
     host: "127.0.0.1",
     port: devPort,
